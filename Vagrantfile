@@ -7,7 +7,7 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "ubuntu/trusty64"
+  config.vm.box = "ubuntu/wily64"
 
   # Set hostname
   config.vm.hostname = "guest"
@@ -17,9 +17,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Have VM show in the same network as guest OS.
   config.vm.network "public_network"
+  # Example how to make Vagrant not ask for bridged networking interface.
+  # config.vm.network "public_network", bridge: 'en0: Wi-Fi (AirPort)'
 
   # Folder sharing.
   config.vm.synced_folder ".", "/vagrant", :owner => "vagrant"
+  config.vm.synced_folder "./project", "/usr/local/var/www/myproject", :owner => "vagrant"
 
   # VirtualBox configuration.
   config.vm.provider "virtualbox" do |vb|

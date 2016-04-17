@@ -28,7 +28,7 @@ debconf-set-selections <<< "mysql-server mysql-server/root_password password ${M
 debconf-set-selections <<< "mysql-server mysql-server/root_password_again password ${MYSQL_ROOT_PASS}"
 
 # Install packages.
-apt-get install -y mysql-server-5.5 mysql-client-5.5
+apt-get install -y mysql-server mysql-client
 
 # Configure MySQL to bind to all addresses.
 sed -i "s/bind-address.*/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
