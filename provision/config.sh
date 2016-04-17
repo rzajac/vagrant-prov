@@ -74,7 +74,7 @@ PHP5_PACKAGES+=" php5-xdebug"
 
 # Pick web server to configure PHP with.
 # Valid values are empty string or: apache, nginx
-PHP5_WEB_SERVER="nginx"
+PHP5_WEB_SERVER="apache"
 
 ###########################################################
 # MySQL.
