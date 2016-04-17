@@ -1,0 +1,100 @@
+#!/usr/bin/env bash
+
+# Copyright 2016 Rafal Zajac <rzajac@gmail.com>
+# 
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+# 
+#     http://www.apache.org/licenses/LICENSE-2.0
+# 
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+# This file is maintained at http://github.com/rzajac/vagrant-lamp
+
+###########################################################
+# Provisioning configuration. All provisioner scripts
+# by default include this file.
+###########################################################
+
+# The directory where all provisioning scripts are.
+PROVISION_SH_DIR=/vagrant/provision
+
+###########################################################
+# Project configuration
+###########################################################
+
+# The name of the project.
+# It must contain only letters and digits.
+PROJECT_NAME="MyProject"
+
+# The project directory name.
+# It must contain only letters and digits.
+PROJECT_DIR_NAME="myproject"
+
+# The path to where index file is located. 
+# Relative to project root folder.
+PROJECT_INDEX_DIR=""
+
+# The project development domain.
+PROJECT_DEV_DOMAIN="project.dev"
+
+###########################################################
+# Apache.
+###########################################################
+
+# Enable Apache provisioning. Set to "no" to disable. 
+APACHE_ENABLE="yes"
+
+# Apache modules to enable.
+APACHE_MODULES="rewrite"
+
+###########################################################
+# Nginx.
+###########################################################
+
+# Enable Nginx provisioning. Set to "no" to disable. 
+NGINX_ENABLE="no"
+
+###########################################################
+# PHP 5.5.
+###########################################################
+
+# Enable PHP 5.5 provisioning. Set to "no" to disable.
+PHP5_ENABLE="yes"
+
+# The list of PHP packages to install.
+PHP5_PACKAGES="php5-cli php5-json php5-dev php5-mysql php5-curl php5-gd"
+PHP5_PACKAGES+=" php-pear php5-imagick php5-mcrypt php5-memcached"
+PHP5_PACKAGES+=" php5-xdebug"
+
+# Pick web server to configure PHP with.
+# Valid values are empty string or: apache, nginx
+PHP5_WEB_SERVER="nginx"
+
+###########################################################
+# MySQL.
+###########################################################
+
+# Enable MySQL provisioning. Set to "no" to disable. 
+MYSQL_ENABLE="yes"
+
+# The password to set for MySQL root user.
+MYSQL_ROOT_PASS="r00t"
+
+MYSQL_APP_USER="${PROJECT_NAME}User"
+MYSQL_APP_PASS="${PROJECT_NAME}Pass"
+
+MYSQL_APP_DB="${PROJECT_NAME}"
+
+###########################################################
+# Memcached.
+###########################################################
+
+# Enable memcahced provisioning. Set to "no" to disable. 
+MEMCACHED_ENABLE="yes"
+
