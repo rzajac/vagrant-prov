@@ -1,8 +1,8 @@
 ## Collection of Vagrant configuration scripts.
 
-This project was created to gather all the provisioning scripts I use for setting up VMs for my projects.
+This project was created to gather all the provisioning scripts I use for my projects.
 
-For now it only includes scripts to configure:
+Currently it includes scripts to install and configure:
 
 - Apache
 - Nginx
