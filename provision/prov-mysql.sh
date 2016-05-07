@@ -31,7 +31,7 @@ debconf-set-selections <<< "mysql-server mysql-server/root_password_again passwo
 apt-get install -y mysql-server mysql-client
 
 # Configure MySQL to bind to all addresses.
-sed -i "s/bind-address.*/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
+sed -i "s/bind-address.*/bind-address = 0.0.0.0/" /etc/mysql/mysql.conf.d/mysqld.cnf
 
 # Add users.
 echo "CREATE USER '${MYSQL_APP_USER}'@'%' IDENTIFIED BY '${MYSQL_APP_PASS}'" | mysql -uroot -p${MYSQL_ROOT_PASS}
