@@ -33,8 +33,9 @@ usermod -a -G vagrant www-data
 # Add repositories.
 add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) main universe restricted multiverse"
 
-# Update.
+# Update and upgrade.
 apt-get update
+apt-get upgrade
 
 # Install essentioals.
 apt-get install -y  vim \
