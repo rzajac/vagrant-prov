@@ -19,7 +19,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # config.vm.network "forwarded_port", guest: 80, host: 8080
 
   # Only host should be able to access guest OS.
-  config.vm.network "private_network"
+  config.vm.network "private_network", ip: "192.168.33.10"
 
   # Have VM show in the same network as guest OS.
   # config.vm.network "public_network"
