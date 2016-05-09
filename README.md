@@ -22,11 +22,11 @@ Customize `Vagrantfile` and `Vagrantconf` file and then run `vagrant up`.
 
 ## Composer install.
 
-{
-    "require": {
-        "rzajac/vagrant-prov": "0.2.*"
+    {
+        "require": {
+            "rzajac/vagrant-prov": "0.2.*"
+        }
     }
-}
 
 After running `composer install` you must run `vendor/bin/php-vagrant-init` to 
 initialize the `Vagrantfile` and `Vagrantconf` in your project root directory.
