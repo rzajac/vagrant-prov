@@ -28,7 +28,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Folder sharing.
   config.vm.synced_folder ".", "/vagrant", :owner => "vagrant"
-  config.vm.synced_folder "./project", "/usr/local/var/www/myproject", :owner => "vagrant"
+  config.vm.synced_folder "project", "/usr/local/var/www/myproject", :owner => "vagrant"
+
+  if Dir.exists?("vendor/rzajac/vagrant-prov")
+    provision_dir = "vendor/rzajac/vagrant-prov/provision"
+  else
+    provision_dir = "provision"
+  end
+
+  config.vm.synced_folder provision_dir, "/provision", :owner => "vagrant"
 
   # VirtualBox configuration.
   config.vm.provider "virtualbox" do |vb|
@@ -50,7 +58,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
 
   # Provision the VM.
-  config.vm.provision :shell, :path => "provision/main-provision.sh", :keep_color => true
+  config.vm.provision :shell, :path => provision_dir + "/main-provision.sh", :keep_color => true
 
   # Copy files from the host machine.
   # config.vm.provision :file, source: "~/.gitconfig", destination: "/home/vagrant/.gitconfig"
