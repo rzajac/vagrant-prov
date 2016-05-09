@@ -1,0 +1,19 @@
+{
+  "name": "rzajac/vagrant-prov",
+  "description": "Vagrant provisioning scripts for PHP, MySQL, Apache and Nginx",
+  "type": "project",
+  "keywords": ["vagrant"],
+  "license": "Apache License 2.0",
+  "authors": [
+    {
+      "name": "Rafal Zajac",
+      "email": "rzajac@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0",
+  },
+  "bin": [
+    "vagrant-init"
+  ]
+}
