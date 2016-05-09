@@ -14,10 +14,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-# This file is maintained at http://github.com/rzajac/vagrant-lamp
+# This file is maintained at http://github.com/rzajac/vagrant-prov
 
 # Import shared resources.
-source /vagrant/provision/config.sh
+source /vagrant/Vagrantconf
 
 ###########################################################
 # No need to edit below this line.

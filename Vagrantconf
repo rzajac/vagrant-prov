@@ -14,10 +14,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-# This file is maintained at http://github.com/rzajac/vagrant-lamp
+# This file is maintained at http://github.com/rzajac/vagrant-prov
 
 ###########################################################
-# Provisioning configuration. All provisioner scripts
+# Provisioning configuration. All provisioning scripts
 # by default include this file.
 ###########################################################
 
@@ -33,6 +33,7 @@ PROVISION_SH_DIR=/vagrant/provision
 PROJECT_NAME="MyProject"
 
 # The project directory name.
+# This directory will be created in /usr/local/var/www/.
 # It must contain only letters and digits.
 PROJECT_DIR_NAME="myproject"
 

@@ -14,14 +14,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-# This file is maintained at http://github.com/rzajac/vagrant-lamp
+# This file is maintained at http://github.com/rzajac/vagrant-prov
 
 ###########################################################
-# Edit config.sh before provisioning.
+# Edit Vagrantconf before provisioning.
 ###########################################################
 
 # Import shared resources.
-source /vagrant/provision/config.sh
+source /vagrant/Vagrantconf
 
 ###########################################################
 # No need to edit below this line.
@@ -30,10 +30,10 @@ source /vagrant/provision/config.sh
 # Make it non interactive installation.
 export DEBIAN_FRONTEND=noninteractive
 
-# Configute swap.
+# Configure swap.
 ${PROVISION_SH_DIR}/core-swap.sh 
 
-# Configure envirnoment, install most important software.
+# Configure environment, install most important software.
 ${PROVISION_SH_DIR}/core-core.sh
 
 # Provision enabled.

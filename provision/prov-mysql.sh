@@ -14,10 +14,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-# This file is maintained at http://github.com/rzajac/vagrant-lamp
+# This file is maintained at http://github.com/rzajac/vagrant-prov
 
 # Import shared resources.
-source /vagrant/provision/config.sh
+source /vagrant/Vagrantconf
 
 ###########################################################
 # No need to edit below this line.
@@ -39,7 +39,7 @@ echo "CREATE USER '${MYSQL_APP_USER}'@'%' IDENTIFIED BY '${MYSQL_APP_PASS}'" | m
 # Create databases.
 echo "CREATE DATABASE ${MYSQL_APP_DB} DEFAULT CHARACTER SET utf8;" | mysql -uroot -p${MYSQL_ROOT_PASS}
 
-# Grant privilages.
+# Grant privileges.
 echo "GRANT ALL ON ${MYSQL_APP_DB}.* TO '${MYSQL_APP_USER}'@'%'" | mysql -uroot -p${MYSQL_ROOT_PASS}
 
 # Allow root to login from anywhere

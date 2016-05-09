@@ -1,6 +1,7 @@
-## Collection of Vagrant configuration scripts.
+## Vagrant provisioning scripts.
 
-This project was created to gather all the provisioning scripts I use for my projects.
+This project was created to gather in one place all the provisioning 
+scripts I use in my projects.
 
 Currently it includes scripts to install and configure:
 
@@ -17,7 +18,24 @@ of course [Vagrant](https://www.vagrantup.com/downloads.html) installed.
 
 ## Configuration.
 
-All you need to do is edit `provision/config.sh`, customize it to your needs and run `vagrant up`.
+Customize `Vagrantfile` and `Vagrantconf` file and then run `vagrant up`.  
+
+## Composer install.
+
+{
+    "require": {
+        "rzajac/vagrant-prov": "0.2.*"
+    }
+}
+
+After running `composer install` you must run `vendor/bin/php-vagrant-init` to 
+initialize the `Vagrantfile` and `Vagrantconf` in your project root directory.
+
+To use directory other then `project` for web server root edit line:
+  
+    config.vm.synced_folder "./project", "/usr/local/var/www/myproject", :owner => "vagrant"
+    
+in `Vagrantfile`.
 
 ## License.
 
