@@ -22,7 +22,7 @@
 ###########################################################
 
 # The directory where all provisioning scripts are.
-PROVISION_SH_DIR=/vagrant/provision
+PROVISION_SH_DIR=/provision
 
 ###########################################################
 # Project configuration

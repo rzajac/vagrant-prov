@@ -33,7 +33,7 @@ initialize the `Vagrantfile` and `Vagrantconf` in your project root directory.
 
 To use directory other then `project` for web server root edit line:
   
-    config.vm.synced_folder "./project", "/usr/local/var/www/myproject", :owner => "vagrant"
+    config.vm.synced_folder "project", "/usr/local/var/www/myproject", :owner => "vagrant"
     
 in `Vagrantfile`.
 
