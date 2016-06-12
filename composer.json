@@ -17,10 +17,10 @@
     "provision/bin/php-vagrant-init"
   ],
   "scripts": {
-    "post-install-cmd": [
+    "post-package-install": [
       "php provision/bin/php-vagrant-init"
     ],
-    "post-update-cmd": [
+    "post-package-update": [
       "php provision/bin/php-vagrant-init"
     ]
   }
