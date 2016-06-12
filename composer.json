@@ -17,7 +17,7 @@
     "provision/bin/php-vagrant-init"
   ],
   "scripts": {
-    "post-package-install": [
+    "post-install-cmd": [
       "php provision/bin/php-vagrant-init"
     ]
   }
