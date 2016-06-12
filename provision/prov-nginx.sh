@@ -23,6 +23,10 @@ source /vagrant/Vagrantconf
 # No need to edit below this line.
 ###########################################################
 
+# Stop apache.
+service apache2 stop
+update-rc.d apache2 disable
+
 # Install packages.
 apt-get install -y nginx
 

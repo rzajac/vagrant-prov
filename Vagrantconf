@@ -70,12 +70,28 @@ PHP5_ENABLE="yes"
 
 # The list of PHP packages to install.
 PHP5_PACKAGES="php5-cli php5-json php5-dev php5-mysql php5-curl php5-gd"
-PHP5_PACKAGES+=" php-pear php5-imagick php5-mcrypt php5-memcached"
+PHP5_PACKAGES+=" php-pear php5-imagick php5-mcrypt php5.5-mbstring php5-memcached"
 PHP5_PACKAGES+=" php5-xdebug"
 
 # Pick web server to configure PHP with.
 # Valid values are empty string or: apache, nginx
 PHP5_WEB_SERVER="apache"
+
+###########################################################
+# PHP 7.x.
+###########################################################
+
+# Enable PHP 7.x provisioning. Set to "no" to disable.
+PHP7_ENABLE="no"
+
+# The list of PHP packages to install.
+PHP7_PACKAGES="php7.1-common php7.1-cli php7.1-json php7.1-dev php7.1-mysql php7.1-curl php7.1-gd"
+PHP7_PACKAGES+=" php7.1-mcrypt php7.1-mbstring"
+PHP7_PACKAGES+=" php-memcached php-msgpack php-igbinary"
+
+# Pick web server to configure PHP with.
+# Valid values are empty string or: apache, nginx
+PHP7_WEB_SERVER="nginx"
 
 ###########################################################
 # MySQL.

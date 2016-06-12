@@ -23,6 +23,10 @@ source /vagrant/Vagrantconf
 # No need to edit below this line.
 ###########################################################
 
+# Stop nginx.
+service nginx stop
+update-rc.d nginx disable
+
 # Install Apache.
 apt-get install -y apache2
 
@@ -35,6 +39,6 @@ a2dissite 000-default
 # Enable needed modules.
 a2enmod ${APACHE_MODULES}
 
-# Final restart.
+# Stop apache by default.
 service apache2 stop
 update-rc.d apache2 disable
