@@ -20,16 +20,29 @@
  */
 
 $cwd = getcwd();
+
+// The project root directory.
+// The one where vendor directory is located.
 $myVagrantDir = realpath(__DIR__."/../..");
 
-if (file_exists($cwd."/Vagrantfile")) {
+// The directory of vagrant-prov project.
+$srcDir = $myVagrantDir."/vagrant/rzajac/vagrant-prov";
+
+if (file_exists($myVagrantDir."/Vagrantfile")) {
     echo "Vagrantfile already exists.\n";
     exit(1);
 }
 
-if (!file_exists($cwd."/Vagrantconf")) {
-    exec("cp $myVagrantDir/Vagrantconf $cwd", $out, $ret);
+if (file_exists($myVagrantDir."/Vagrantconf")) {
+    echo "Vagrantconf already exists.";
+    exit(1);
 }
 
-exec("cp $myVagrantDir/Vagrantfile $cwd", $out, $ret);
-exit($ret);
+exec("cp $srcDir/Vagrantconf $myVagrantDir", $out, $ret1);
+exec("cp $srcDir/Vagrantfile $myVagrantDir", $out, $ret2);
+
+if ($ret1 && $ret2) {
+    echo "Vagrantconf and Vagrantfile have been copied to your project folder.\n";
+} else {
+    echo "Error coping Vagrantconf and Vagrant file.\n";
+}
