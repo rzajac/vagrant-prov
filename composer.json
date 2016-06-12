@@ -15,13 +15,5 @@
   },
   "bin": [
     "provision/bin/php-vagrant-init"
-  ],
-  "scripts": {
-    "post-package-install": [
-      "php provision/bin/php-vagrant-init"
-    ],
-    "post-package-update": [
-      "php provision/bin/php-vagrant-init"
-    ]
-  }
+  ]
 }
