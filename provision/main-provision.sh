@@ -50,6 +50,10 @@ if [ "${PHP5_ENABLE}" == "yes" ]; then
     ${PROVISION_SH_DIR}/prov-php5.sh
 fi
 
+if [ "${PHP7_ENABLE}" == "yes" ]; then
+    ${PROVISION_SH_DIR}/prov-php7.sh
+fi
+
 if [ "${MYSQL_ENABLE}" == "yes" ]; then
     ${PROVISION_SH_DIR}/prov-mysql.sh
 fi

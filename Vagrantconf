@@ -35,6 +35,9 @@ PROJECT_NAME="MyProject"
 # The project directory name.
 # This directory will be created in /usr/local/var/www/.
 # It must contain only letters and digits.
+# IMPORTANT
+# This has to match with the line in Vagrantfile:
+# config.vm.synced_folder "project", "/usr/local/var/www/myproject", :owner => "vagrant"
 PROJECT_DIR_NAME="myproject"
 
 # The path to where index file is located. 

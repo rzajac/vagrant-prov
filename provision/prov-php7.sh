@@ -23,14 +23,14 @@ source /vagrant/Vagrantconf
 # No need to edit below this line.
 ###########################################################
 
-apt-get install python-software-properties
+apt-get install -y python-software-properties
 add-apt-repository -y ppa:ondrej/php
 apt-get update
 
 apt-get remove php5-common -y
 apt-get purge php5-common -y
 
-apt-get install php7.0
+apt-get install -y php7.0
 
 # PHP packages.
 apt-get install -y ${PHP7_PACKAGES}

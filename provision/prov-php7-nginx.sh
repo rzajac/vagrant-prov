@@ -87,4 +87,4 @@ EOF
 # Add development domain to hosts file.
 echo "127.0.1.1 ${PROJECT_DEV_DOMAIN}" >> /etc/hosts
 
-nginx_ensite myproject
+nginx_ensite ${PROJECT_DIR_NAME}
