@@ -19,6 +19,9 @@
   "scripts": {
     "post-install-cmd": [
       "php provision/bin/php-vagrant-init"
+    ],
+    "post-update-cmd": [
+      "php provision/bin/php-vagrant-init"
     ]
   }
 }
