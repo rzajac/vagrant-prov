@@ -37,7 +37,7 @@ fi
 mkdir -p /usr/local/var/www/${PROJECT_DIR_NAME}
 
 # Install PHP5 Apache module and provision PHP5 apache application.
-apt-get -y install libapache2-mod-php7.1
+apt-get -y install libapache2-mod-php7.0
 
 cat > /etc/apache2/sites-available/${PROJECT_DEV_DOMAIN}.conf <<EOF
 <VirtualHost *:80>
@@ -62,3 +62,7 @@ a2ensite ${PROJECT_DEV_DOMAIN}
 
 # Add development domain to hosts file.
 echo "127.0.1.1 ${PROJECT_DEV_DOMAIN}" >> /etc/hosts
+
+if [ "${PHP7_XDEBUG}" == "yes" ]; then
+    apt-get install php-xdebug
+fi

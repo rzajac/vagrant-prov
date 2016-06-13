@@ -88,3 +88,7 @@ EOF
 echo "127.0.1.1 ${PROJECT_DEV_DOMAIN}" >> /etc/hosts
 
 nginx_ensite myproject
+
+if [ "${PHP5_XDEBUG}" == "yes" ]; then
+    apt-get install php5-xdebug
+fi

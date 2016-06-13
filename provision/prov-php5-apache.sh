@@ -62,3 +62,7 @@ a2ensite ${PROJECT_DEV_DOMAIN}
 
 # Add development domain to hosts file.
 echo "127.0.1.1 ${PROJECT_DEV_DOMAIN}" >> /etc/hosts
+
+if [ "${PHP5_XDEBUG}" == "yes" ]; then
+    apt-get install php5-xdebug
+fi

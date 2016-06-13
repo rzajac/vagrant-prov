@@ -24,8 +24,8 @@ source /vagrant/Vagrantconf
 ###########################################################
 
 # Remove PHP7 in case it is installed.
-apt-get remove php7.1-common -y
-apt-get purge php7.1-common -y
+apt-get remove php7.0-common -y
+apt-get purge php7.0-common -y
 
 # PHP packages.
 apt-get install -y ${PHP5_PACKAGES}

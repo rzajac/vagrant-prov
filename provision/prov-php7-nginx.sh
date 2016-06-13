@@ -37,7 +37,7 @@ fi
 mkdir -p /usr/local/var/www/${PROJECT_DIR_NAME}
 
 # Install packages.
-apt-get install -y php7.1-fpm
+apt-get install -y php7.0-fpm
 
 cat > /etc/nginx/sites-available/${PROJECT_DIR_NAME} <<EOF
 server {
@@ -69,7 +69,7 @@ server {
       try_files \$uri =404;
       fastcgi_split_path_info ^(.+\.php)(/.+)$;
       include /etc/nginx/fastcgi_params;
-      fastcgi_pass unix:/var/run/php/php7.1-fpm.sock;
+      fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
       fastcgi_index index.php;
       fastcgi_param SCRIPT_FILENAME \$document_root\$fastcgi_script_name;
       fastcgi_intercept_errors on;
@@ -88,3 +88,9 @@ EOF
 echo "127.0.1.1 ${PROJECT_DEV_DOMAIN}" >> /etc/hosts
 
 nginx_ensite ${PROJECT_DIR_NAME}
+
+if [ "${PHP7_XDEBUG}" == "yes" ]; then
+    apt-get install php-xdebug
+#    cp /etc/php/7.0/mods-available/xdebug.ini /etc/php/7.1/mods-available/xdebug.ini
+    service php7.0-fpm restart
+fi
