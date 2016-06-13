@@ -23,6 +23,7 @@ source /vagrant/Vagrantconf
 # No need to edit below this line.
 ###########################################################
 
+# Remove PHP7 in case it is installed.
 apt-get remove php7.1-common -y
 apt-get purge php7.1-common -y
 

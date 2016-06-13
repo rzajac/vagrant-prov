@@ -73,7 +73,7 @@ PHP5_ENABLE="yes"
 
 # The list of PHP packages to install.
 PHP5_PACKAGES="php5-cli php5-json php5-dev php5-mysql php5-curl php5-gd"
-PHP5_PACKAGES+=" php-pear php5-imagick php5-mcrypt php5.5-mbstring php5-memcached"
+PHP5_PACKAGES+=" php-pear php5-imagick php5-mcrypt php5-memcached"
 PHP5_PACKAGES+=" php5-xdebug"
 
 # Pick web server to configure PHP with.
