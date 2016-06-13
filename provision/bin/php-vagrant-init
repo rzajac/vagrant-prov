@@ -26,21 +26,31 @@ $myVagrantDir = realpath(__DIR__."/../../../../..");
 // The directory of vagrant-prov project.
 $srcDir = $myVagrantDir."/vendor/rzajac/vagrant-prov";
 
-if (file_exists($myVagrantDir."/Vagrantfile")) {
-    echo "Vagrantfile already exists.\n";
-    exit(1);
-}
+// Default exit code.
+$exit = 0;
 
+echo "Coping Vagrantconf file: ";
 if (file_exists($myVagrantDir."/Vagrantconf")) {
-    echo "Vagrantconf already exists.\n";
-    exit(1);
-}
-
-exec("cp $srcDir/Vagrantconf $myVagrantDir", $out, $ret1);
-exec("cp $srcDir/Vagrantfile $myVagrantDir", $out, $ret2);
-
-if ($ret1 === 0 && $ret2 === 0) {
-    echo "Vagrantconf and Vagrantfile have been copied to your project folder.\n";
+    echo "ERROR - already exists.\n";
+    $exit = 1;
 } else {
-    echo "Error coping Vagrantconf or Vagrant file.\n";
+    exec("cp $srcDir/Vagrantconf $myVagrantDir", $out, $ret1);
+    if ($ret1 !== 0) {
+        echo "ERROR - coping file.\n";
+        $exit = 1;
+    }
 }
+
+echo "Coping Vagrantfile file: ";
+if (file_exists($myVagrantDir."/Vagrantfile")) {
+    echo "ERROR - already exists.\n";
+    $exit = 1;
+} else {
+    exec("cp $srcDir/Vagrantfile $myVagrantDir", $out, $ret2);
+    if ($ret2 !== 0) {
+        echo "ERROR - coping file.\n";
+        $exit = 1;
+    }
+}
+
+exit($exit);
