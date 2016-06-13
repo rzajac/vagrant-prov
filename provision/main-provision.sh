@@ -46,12 +46,20 @@ if [ "${NGINX_ENABLE}" == "yes" ]; then
     ${PROVISION_SH_DIR}/prov-nginx.sh
 fi
 
-if [ "${PHP5_ENABLE}" == "yes" ]; then
-    ${PROVISION_SH_DIR}/prov-php5.sh
-fi
+if [ "${PHP5_ENABLE}" == "yes" ] && [ "${PHP7_ENABLE}" == "yes" ]; then
+    echo "====================================================================="
+    echo "You must enable either PHP5 or PHP7 not both"
+    echo "After provisioning run one of the scripts:"
+    echo "${PROVISION_SH_DIR}/prov-php5.sh or ${PROVISION_SH_DIR}/prov-php7.sh "
+    echo "====================================================================="
+else
+    if [ "${PHP5_ENABLE}" == "yes" ]; then
+        ${PROVISION_SH_DIR}/prov-php5.sh
+    fi
 
-if [ "${PHP7_ENABLE}" == "yes" ]; then
-    ${PROVISION_SH_DIR}/prov-php7.sh
+    if [ "${PHP7_ENABLE}" == "yes" ]; then
+        ${PROVISION_SH_DIR}/prov-php7.sh
+    fi
 fi
 
 if [ "${MYSQL_ENABLE}" == "yes" ]; then
@@ -60,5 +68,13 @@ fi
 
 if [ "${MEMCACHED_ENABLE}" == "yes" ]; then
     ${PROVISION_SH_DIR}/prov-memcached.sh
+fi
+
+if [ "${REDIS_ENABLE}" == "yes" ]; then
+    ${PROVISION_SH_DIR}/prov-redis.sh
+fi
+
+if [ "${BEANSTALK_ENABLE}" == "yes" ]; then
+    ${PROVISION_SH_DIR}/prov-beanstalked.sh
 fi
 

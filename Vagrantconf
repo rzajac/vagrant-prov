@@ -118,3 +118,16 @@ MYSQL_APP_DB="${PROJECT_NAME}"
 # Enable memcahced provisioning. Set to "no" to disable. 
 MEMCACHED_ENABLE="yes"
 
+###########################################################
+# Redis.
+###########################################################
+
+# Enable redis provisioning. Set to "yes" to enable.
+REDIS_ENABLE="no"
+
+###########################################################
+# Beanstalkd.
+###########################################################
+
+# Enable beanstalkd provisioning. Set to "yes" to enable.
+BEANSTALK_ENABLE="no"
