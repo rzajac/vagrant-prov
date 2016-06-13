@@ -23,4 +23,4 @@ source /vagrant/Vagrantconf
 # No need to edit below this line.
 ###########################################################
 
-apt-get install beanstalkd
+apt-get install -y beanstalkd

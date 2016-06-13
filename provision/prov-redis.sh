@@ -23,4 +23,4 @@ source /vagrant/Vagrantconf
 # No need to edit below this line.
 ###########################################################
 
-apt-get install redis-server redis-tools
+apt-get install -y redis-server redis-tools
