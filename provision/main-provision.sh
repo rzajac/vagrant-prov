@@ -78,3 +78,6 @@ if [ "${BEANSTALK_ENABLE}" == "yes" ]; then
     ${PROVISION_SH_DIR}/prov-beanstalked.sh
 fi
 
+if [ -d "${CUSTOM_PROVISION_SH_DIR}" ]; then
+    ${CUSTOM_PROVISION_SH_DIR}/main-provision.sh
+fi
