@@ -60,6 +60,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Provision the VM.
   config.vm.provision :shell, :path => provision_dir + "/main-provision.sh", :keep_color => true
 
+  # Custom provisioning script.
+  if File.file?("custom-provision.sh")
+    config.vm.provision :shell, :path => "custom-provision.sh", :keep_color => true
+  end
+
   # Copy files from the host machine.
   # config.vm.provision :file, source: "~/.gitconfig", destination: "/home/vagrant/.gitconfig"
 end

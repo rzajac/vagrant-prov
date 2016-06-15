@@ -24,9 +24,6 @@
 # The directory where all provisioning scripts are.
 PROVISION_SH_DIR=/provision
 
-# Custom provisioning script.
-CUSTOM_PROVISION_SH_DIR=/provision-custom
-
 ###########################################################
 # Project configuration
 ###########################################################
