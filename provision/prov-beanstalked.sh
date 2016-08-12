@@ -24,3 +24,7 @@ source /vagrant/Vagrantconf
 ###########################################################
 
 apt-get install -y beanstalkd
+
+sed -i "s/BEANSTALKD_LISTEN_ADDR.*/BEANSTALKD_LISTEN_ADDR=0.0.0.0/" /etc/default/beanstalkd
+
+service beanstalkd restart
