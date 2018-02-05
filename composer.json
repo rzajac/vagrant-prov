@@ -3,7 +3,7 @@
   "description": "Vagrant provisioning scripts for PHP, MySQL, Apache and Nginx",
   "type": "project",
   "keywords": ["vagrant"],
-  "license": "Apache License 2.0",
+  "license": "Apache-2.0",
   "authors": [
     {
       "name": "Rafal Zajac",
